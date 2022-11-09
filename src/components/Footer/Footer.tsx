@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { SocialBar } from '../SocialBar'
 
-export default function Header() {
+export default function Footer() {
   return (
     <div>
-      Header
+      Footer
       <SocialBar />
     </div>
   )

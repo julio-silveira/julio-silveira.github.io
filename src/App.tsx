@@ -1,11 +1,20 @@
 import React from 'react'
-import './App.css'
+import { About } from './components/About'
+import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { Intro } from './components/Intro'
+import { Projects } from './components/Projects'
+import { Techs } from './components/Techs'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
+      <Intro />
+      <Projects />
+      <Techs />
+      <About />
+      <Footer />
     </div>
   )
 }

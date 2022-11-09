@@ -3,9 +3,14 @@ import { SocialBar } from '../SocialBar'
 
 export default function Header() {
   return (
-    <div>
-      Header
+    <header>
+      <p>Portifolio</p>
+      <div>
+        <p>Projects</p>
+        <p>Technologies</p>
+        <p>About Me</p>
+      </div>
       <SocialBar />
-    </div>
+    </header>
   )
 }

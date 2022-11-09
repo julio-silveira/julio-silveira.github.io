@@ -38,7 +38,7 @@ const ProgressBar = (props: ProgressBarProps) => {
     >
       <Box
         sx={{
-          backgroundColor: 'white',
+          backgroundColor: '#121212',
           display: 'flex',
           justifyContent: 'space-between'
         }}

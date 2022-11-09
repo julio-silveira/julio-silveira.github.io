@@ -1,4 +1,3 @@
-import { Button } from '@mui/material'
 import * as React from 'react'
 import projectList from '../../data/projectList'
 
@@ -13,10 +12,10 @@ export default function Projects() {
             <h3>{projectName}</h3>
             <p>{description}</p>
             <a href={urlGithub} target="_blank" rel="noopener noreferrer">
-              <Button type="button">Go to Repository</Button>
+              <button type="button">Go to Repository</button>
             </a>
             <a href={urlDeploy} target="_blank" rel="noopener noreferrer">
-              <Button type="button">Visualizar site </Button>
+              <button type="button">Visualizar site </button>
             </a>
           </article>
         )

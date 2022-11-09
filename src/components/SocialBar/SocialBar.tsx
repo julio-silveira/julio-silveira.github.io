@@ -2,10 +2,11 @@ import * as React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import personalData from '../../data/personalData'
+import { Stack } from '@mui/material'
 
 export default function SocialBar() {
   return (
-    <nav>
+    <Stack component="nav" spacing={{ xs: 1, sm: 2 }} direction="row">
       <a
         style={{ textDecoration: 'none' }}
         href={personalData.linkedin}
@@ -22,6 +23,6 @@ export default function SocialBar() {
       >
         <LinkedInIcon sx={{ color: 'white' }} />
       </a>
-    </nav>
+    </Stack>
   )
 }

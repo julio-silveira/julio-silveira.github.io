@@ -1,21 +1,26 @@
 import * as React from 'react'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import personalData from '../../data/personalData'
 
 export default function SocialBar() {
   return (
     <nav>
       <a
-        href="https://www.linkedin.com/in/juliosilveiradev/"
+        style={{ textDecoration: 'none' }}
+        href={personalData.linkedin}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button type="button">Linkedin</button>
+        <GitHubIcon sx={{ color: 'white' }} />
       </a>
       <a
-        href="https://github.com/julio-silveira"
+        style={{ textDecoration: 'none' }}
+        href={personalData.github}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button type="button">GitHub</button>
+        <LinkedInIcon sx={{ color: 'white' }} />
       </a>
     </nav>
   )

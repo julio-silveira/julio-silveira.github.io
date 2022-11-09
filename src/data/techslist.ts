@@ -10,6 +10,10 @@ export const techBarList: techListFormat[] = [
   {
     techName: 'CSS',
     completed: 50
+  },
+  {
+    techName: 'javascript',
+    completed: 25
   }
 ]
 

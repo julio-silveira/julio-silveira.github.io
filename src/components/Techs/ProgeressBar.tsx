@@ -3,15 +3,28 @@ import React, { useEffect, useState } from 'react'
 
 interface ProgressBarProps {
   completed: number
+  techName: string
 }
 
 const ProgressBar = (props: ProgressBarProps) => {
-  const { completed } = props
+  const { completed, techName } = props
   const [loadCompleted, setLoadCompleted] = useState(0)
 
   useEffect(() => {
     setInterval(() => setLoadCompleted(completed), 500)
   }, [completed])
+
+  const getRanking = () => {
+    if (completed <= 25) {
+      return 'Begineer'
+    } else if (completed <= 50) {
+      return 'Regular'
+    } else if (completed <= 75) {
+      return 'Advanced'
+    } else if (completed <= 100) {
+      return 'Expert'
+    }
+  }
 
   return (
     <Box
@@ -25,6 +38,16 @@ const ProgressBar = (props: ProgressBarProps) => {
     >
       <Box
         sx={{
+          backgroundColor: 'white',
+          display: 'flex',
+          justifyContent: 'space-between'
+        }}
+      >
+        <span> {techName} </span>
+        <span>{getRanking()}</span>
+      </Box>
+      <Box
+        sx={{
           height: '100%',
           width: `${loadCompleted}%`,
           backgroundColor: 'black',
@@ -35,8 +58,8 @@ const ProgressBar = (props: ProgressBarProps) => {
       >
         <Typography
           variant="body1"
-          sx={{ color: 'white', fontWeight: '700' }}
-        >{`${completed}%`}</Typography>
+          sx={{ paddingRight: '5px', color: 'white', fontWeight: '700' }}
+        >{`${loadCompleted}%`}</Typography>
       </Box>
     </Box>
   )

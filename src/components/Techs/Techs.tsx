@@ -7,8 +7,7 @@ export default function Techs() {
     <section>
       {techBarList.map(({ techName, completed }, index) => (
         <article key={`techName-${index}`}>
-          <p>{techName}</p>
-          <ProgressBar completed={completed} />
+          <ProgressBar completed={completed} techName={techName} />
         </article>
       ))}
       {techNamesList.map((tech, index) => (

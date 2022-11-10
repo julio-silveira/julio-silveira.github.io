@@ -13,9 +13,9 @@ import MenuItem from '@mui/material/MenuItem'
 import LogoDevIcon from '@mui/icons-material/LogoDev'
 import { SocialBar } from '../SocialBar'
 
-const pages = ['Projects', 'Technologies', 'About Me']
+const pages = ['Projetos', 'Tecnologias']
 
-export default function Header() {
+export default function Header({ techsRef }) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -23,6 +23,7 @@ export default function Header() {
   }
 
   const handleCloseNavMenu = () => {
+    techsRef.current.scrollIntoView()
     setAnchorElNav(null)
   }
 
@@ -60,6 +61,7 @@ export default function Header() {
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -72,6 +74,7 @@ export default function Header() {
                 vertical: 'top',
                 horizontal: 'left'
               }}
+              color="primary"
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
@@ -80,7 +83,14 @@ export default function Header() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography
+                    textAlign="center"
+                    onClick={() => {
+                      techsRef.current.scrollIntoView()
+                    }}
+                  >
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

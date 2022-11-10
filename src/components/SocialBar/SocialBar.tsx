@@ -9,7 +9,7 @@ export default function SocialBar() {
     <Stack component="nav" spacing={{ xs: 1, sm: 2 }} direction="row">
       <a
         style={{ textDecoration: 'none' }}
-        href={personalData.linkedin}
+        href={personalData.github}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -17,7 +17,7 @@ export default function SocialBar() {
       </a>
       <a
         style={{ textDecoration: 'none' }}
-        href={personalData.github}
+        href={personalData.linkedin}
         target="_blank"
         rel="noopener noreferrer"
       >

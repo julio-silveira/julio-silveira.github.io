@@ -30,7 +30,7 @@ const ProgressBar = (props: ProgressBarProps) => {
     <Box
       sx={{
         height: '20px',
-        width: '100%',
+        width: '70%',
         backgroundColor: '#e0e0de',
         borderRadius: '50px',
         margin: '50px'
@@ -38,7 +38,7 @@ const ProgressBar = (props: ProgressBarProps) => {
     >
       <Box
         sx={{
-          backgroundColor: '#121212',
+          backgroundColor: '#0F1624',
           display: 'flex',
           justifyContent: 'space-between'
         }}
@@ -50,7 +50,7 @@ const ProgressBar = (props: ProgressBarProps) => {
         sx={{
           height: '100%',
           width: `${loadCompleted}%`,
-          backgroundColor: 'black',
+          background: 'linear-gradient(to right,#945DD6,#6978D1,#13ADC7)',
           borderRadius: 'inherit',
           transition: 'width 1s ease-in-out',
           textAlign: 'right'

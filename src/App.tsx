@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { Container } from '@mui/system'
 // import { About } from './components/About'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
@@ -8,13 +9,16 @@ import { Techs } from './components/Techs'
 import './App.css'
 
 function App() {
+  const techsRef = useRef()
   return (
     <>
-      <Header />
-      <Intro />
-      <Projects />
-      <Techs />
-      {/* <About /> */}
+      <Header techsRef={techsRef} />
+      <Container>
+        <Intro />
+        <Projects />
+        <Techs ref={techsRef} />
+        {/* <About /> */}
+      </Container>
       <Footer />
     </>
   )

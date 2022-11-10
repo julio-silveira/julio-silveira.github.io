@@ -9,8 +9,8 @@ import { Techs } from './components/Techs'
 import './App.css'
 
 function App() {
-  const techsRef = useRef(null)
-  const projectsRef = useRef(null)
+  const techsRef = useRef<HTMLElement>(null)
+  const projectsRef = useRef<HTMLElement>(null)
 
   return (
     <>

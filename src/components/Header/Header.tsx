@@ -15,7 +15,12 @@ import { SocialBar } from '../SocialBar'
 
 const pages = ['Projetos', 'Tecnologias']
 
-export default function Header({ techsRef, projectsRef }) {
+interface HeaderProps {
+  techsRef: React.RefObject<HTMLElement>
+  projectsRef: React.RefObject<HTMLElement>
+}
+
+const Header: React.FC<HeaderProps> = ({ techsRef, projectsRef }) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -27,18 +32,18 @@ export default function Header({ techsRef, projectsRef }) {
   }
 
   const handleScroll = (event: React.MouseEvent<HTMLElement>): void => {
-    const { innerText } = event.target
+    const { innerText } = event.target as HTMLElement
     handleCloseNavMenu()
-
+    console.log(techsRef)
     setTimeout(() => {
       if (innerText === 'PROJETOS') {
-        projectsRef.current.scrollIntoView({
+        projectsRef.current?.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
           inline: 'nearest'
         })
       } else if (innerText === 'TECNOLOGIAS') {
-        techsRef.current.scrollIntoView({
+        techsRef.current?.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
           inline: 'nearest'
@@ -152,3 +157,5 @@ export default function Header({ techsRef, projectsRef }) {
     </AppBar>
   )
 }
+
+export default Header

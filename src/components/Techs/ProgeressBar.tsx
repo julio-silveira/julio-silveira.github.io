@@ -30,7 +30,7 @@ const ProgressBar = (props: ProgressBarProps) => {
     <Box
       sx={{
         height: '20px',
-        width: '70%',
+        width: '80%',
         backgroundColor: '#e0e0de',
         borderRadius: '50px',
         margin: '50px'

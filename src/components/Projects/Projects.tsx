@@ -10,7 +10,7 @@ import { Stack } from '@mui/system'
 const Projects = forwardRef((_props, ref) => {
   return (
     <Box ref={ref} component="section" sx={{ flexGrow: 1, minHeight: '100vh' }}>
-      <h2>Projects</h2>
+      <Typography variant="h3">Projetos</Typography>
       <Grid container spacing={2}>
         {projectList.map(
           (

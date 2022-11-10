@@ -1,0 +1,9 @@
+a {
+  color: white;
+  text-decoration: none; /* no underline */
+}
+
+#root {
+  background-color: #0F1624;
+  color: #FFF;
+}

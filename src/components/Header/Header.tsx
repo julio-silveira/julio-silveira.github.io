@@ -15,7 +15,7 @@ import { SocialBar } from '../SocialBar'
 
 const pages = ['Projetos', 'Tecnologias']
 
-export default function Header({ techsRef }) {
+export default function Header({ techsRef, projectsRef }) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -23,12 +23,32 @@ export default function Header({ techsRef }) {
   }
 
   const handleCloseNavMenu = () => {
-    techsRef.current.scrollIntoView()
     setAnchorElNav(null)
   }
 
+  const handleScroll = (event: React.MouseEvent<HTMLElement>): void => {
+    const { innerText } = event.target
+    handleCloseNavMenu()
+
+    setTimeout(() => {
+      if (innerText === 'PROJETOS') {
+        projectsRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
+      } else if (innerText === 'TECNOLOGIAS') {
+        techsRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
+      }
+    }, 1)
+  }
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ height: '7vh' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <LogoDevIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -82,15 +102,13 @@ export default function Header({ techsRef }) {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography
-                    textAlign="center"
-                    onClick={() => {
-                      techsRef.current.scrollIntoView()
-                    }}
+                <MenuItem key={page} onClick={handleScroll}>
+                  <Button
+                    key={page}
+                    sx={{ my: 2, color: 'black', display: 'block' }}
                   >
                     {page}
-                  </Typography>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
@@ -118,7 +136,7 @@ export default function Header({ techsRef }) {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={handleScroll}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}

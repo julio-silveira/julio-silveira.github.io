@@ -2,6 +2,7 @@ import * as React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import personalData from '../../data/personalData'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { Stack } from '@mui/material'
 
 export default function SocialBar() {
@@ -22,6 +23,14 @@ export default function SocialBar() {
         rel="noopener noreferrer"
       >
         <LinkedInIcon sx={{ color: 'white' }} />
+      </a>
+      <a
+        style={{ textDecoration: 'none' }}
+        href={personalData.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <WhatsAppIcon sx={{ color: 'white' }} />
       </a>
     </Stack>
   )

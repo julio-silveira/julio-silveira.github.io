@@ -9,13 +9,15 @@ import { Techs } from './components/Techs'
 import './App.css'
 
 function App() {
-  const techsRef = useRef()
+  const techsRef = useRef(null)
+  const projectsRef = useRef(null)
+
   return (
     <>
-      <Header techsRef={techsRef} />
+      <Header techsRef={techsRef} projectsRef={projectsRef} />
       <Container>
         <Intro />
-        <Projects />
+        <Projects ref={projectsRef} />
         <Techs ref={techsRef} />
         {/* <About /> */}
       </Container>

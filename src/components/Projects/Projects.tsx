@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { forwardRef } from 'react'
 import projectList from '../../data/projectList'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
@@ -7,9 +7,9 @@ import theme from '../../themes/theme'
 import { Typography } from '@mui/material'
 import { Stack } from '@mui/system'
 
-export default function Projects() {
+const Projects = forwardRef((_props, ref) => {
   return (
-    <Box component="section" sx={{ flexGrow: 1, minHeight: '100vh' }}>
+    <Box ref={ref} component="section" sx={{ flexGrow: 1, minHeight: '100vh' }}>
       <h2>Projects</h2>
       <Grid container spacing={2}>
         {projectList.map(
@@ -90,4 +90,8 @@ export default function Projects() {
       </Grid>
     </Box>
   )
-}
+})
+
+Projects.displayName = 'Projects'
+
+export default Projects

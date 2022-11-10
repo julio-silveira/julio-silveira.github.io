@@ -4,6 +4,7 @@ interface data {
   email: string
   linkedin: string
   github: string
+  whatsapp: string
 }
 
 const personalData: data = {
@@ -11,7 +12,8 @@ const personalData: data = {
   phone: '(83) 98144-13173',
   email: 'julioqueiroz15@gmail.com',
   linkedin: 'https://www.linkedin.com/in/juliosilveiradev/',
-  github: 'https://github.com/julio-silveira'
+  github: 'https://github.com/julio-silveira',
+  whatsapp: 'https://wa.me/5583981443173'
 }
 
 export default personalData

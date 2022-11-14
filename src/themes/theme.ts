@@ -11,6 +11,16 @@ const theme = createTheme({
     info: {
       main: '#FFFFFF'
     }
+  },
+  components: {
+    MuiList: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#0F1624',
+          color: 'white'
+        }
+      }
+    }
   }
 })
 

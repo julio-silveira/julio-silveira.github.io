@@ -5,7 +5,7 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Intro } from './components/Intro'
 import { Projects } from './components/Projects'
-import { Techs } from './components/Techs'
+import { Stacks } from './components/Stacks'
 import './App.css'
 
 function App() {
@@ -16,9 +16,9 @@ function App() {
     <>
       <Header techsRef={techsRef} projectsRef={projectsRef} />
       <Container>
-        <Intro />
+        <Intro projectsRef={projectsRef} />
         <Projects ref={projectsRef} />
-        <Techs ref={techsRef} />
+        <Stacks ref={techsRef} />
         {/* <About /> */}
       </Container>
       <Footer />

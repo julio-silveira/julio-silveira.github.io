@@ -1,94 +1,99 @@
 import React, { forwardRef } from 'react'
 import projectList from '../../data/projectList'
-import Box from '@mui/material/Box'
-import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Unstable_Grid2'
-import theme from '../../themes/theme'
-import { Typography } from '@mui/material'
+import { Paper, Typography } from '@mui/material'
 import { Stack } from '@mui/system'
+import { CardButton, ProjectCard, ProjectsSection } from './styles'
 
 const Projects = forwardRef((_props, ref) => {
   return (
-    <Box ref={ref} component="section" sx={{ flexGrow: 1, minHeight: '100vh' }}>
+    <ProjectsSection ref={ref} component="section" mb="5vh">
       <Typography variant="h3">Projetos</Typography>
-      <Grid container spacing={2}>
-        {projectList.map(
-          (
-            { projectName, description, image, urlDeploy, urlGithub },
-            index
-          ) => (
-            <Grid
-              component="article"
-              xs={12}
-              md={6}
-              sx={{ display: 'flex', justifyContent: 'center' }}
-              key={`projectName${index}`}
+      <Grid container spacing={4} sx={{ mt: '5vh' }}>
+        {projectList.map((project, index) => (
+          <Grid
+            component="article"
+            xs={12}
+            md={6}
+            lg={4}
+            sx={{ display: 'flex', justifyContent: 'center' }}
+            key={`projectName${index}`}
+          >
+            <ProjectCard
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                maxWidth: { xs: '300px', md: '400px' }
+              }}
             >
-              <Paper
-                elevation={24}
+              <img
+                className="card-picture"
+                src={project.image}
+                alt={`image-card}`}
+              />
+              <Typography py={1} variant="h6">
+                {project.projectName}
+              </Typography>
+              <Typography variant="body2">{project.description}</Typography>
+              <Stack
+                direction="row"
+                spacing={2}
+                mb="10px"
                 sx={{
-                  maxWidth: { xs: 300, md: 400 },
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  bgcolor: theme.palette.primary.main,
-                  color: 'white',
-                  border: '2px solid red',
-                  borderRadius: '25px 0',
-                  padding: '20px'
+                  width: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center'
                 }}
               >
-                <img width={100} src={image} alt={`image-card}`} />
-                <h3>{projectName}</h3>
-                <p>{description}</p>
-                <Stack
-                  direction="row"
-                  spacing={1}
-                  sx={{
-                    width: '100%',
-                    justifyContent: 'center'
-                  }}
+                {project.stacks.map((stack) => (
+                  <Paper
+                    sx={{
+                      padding: '3px',
+                      bgcolor: '#0F1624',
+                      color: 'white'
+                    }}
+                    key={`${project.projectName} ${stack}`}
+                  >
+                    {stack}
+                  </Paper>
+                ))}
+              </Stack>
+              <Stack
+                direction="row"
+                spacing={1}
+                sx={{
+                  width: '100%',
+                  justifyContent: 'center'
+                }}
+              >
+                <Typography
+                  component="a"
+                  href={project.urlGithub}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Typography
-                    component="a"
-                    variant="button"
-                    href={urlGithub}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{
-                      textAlign: 'center',
-                      background:
-                        'linear-gradient(to right,#945DD6,#6978D1,#13ADC7)',
-                      padding: '10px',
-                      borderRadius: '30px'
-                    }}
-                  >
+                  <CardButton variant="contained" size="small">
                     Acessar o Repositório
-                  </Typography>
+                  </CardButton>
+                </Typography>
 
-                  <Typography
-                    component="a"
-                    variant="button"
-                    href={urlDeploy}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{
-                      textAlign: 'center',
-                      background:
-                        'linear-gradient(to right,#945DD6,#6978D1,#13ADC7)',
-                      padding: '10px',
-                      borderRadius: '30px'
-                    }}
-                  >
+                <Typography
+                  component="a"
+                  href={project.urlDeploy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CardButton variant="contained" size="small">
                     Visualizar o site
-                  </Typography>
-                </Stack>
-              </Paper>
-            </Grid>
-          )
-        )}
+                  </CardButton>
+                </Typography>
+              </Stack>
+            </ProjectCard>
+          </Grid>
+        ))}
       </Grid>
-    </Box>
+    </ProjectsSection>
   )
 })
 

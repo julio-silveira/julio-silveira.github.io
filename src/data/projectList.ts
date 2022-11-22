@@ -1,27 +1,33 @@
+import trybewallet from '../assets/trybewallet.png'
+import pixelart from '../assets/pixelart.png'
+
 interface project {
   projectName: string
   description: string
   image: string
   urlDeploy: string
   urlGithub: string
+  stacks: string[]
 }
 
 const projectList: project[] = [
   {
     projectName: 'TrybeWallet',
-    description: 'Inserir Descrição Aqui',
-    image:
-      'https://images.squarespace-cdn.com/content/v1/5168923ce4b02d0863352e09/1615918087268-0KKTJJTMNE65GGBMONV4/McDonalds_Q121_WalletSandwich.gif?format=500w',
+    description:
+      'Esta é uma carteira de controle de gastos onde o usuário pode adicionar, remover e editar gastos e visualizar-los em uma tabela.',
+    image: trybewallet,
     urlDeploy: 'https://trybewallet-pied.vercel.app/',
-    urlGithub: 'https://github.com/julio-silveira/TrybeWallet'
+    urlGithub: 'https://github.com/julio-silveira/TrybeWallet',
+    stacks: ['React', 'Redux', 'Material UI']
   },
   {
-    projectName: 'TrybeWallet2',
-    description: 'Inserir Descrição Aqui2',
-    image:
-      'https://images.squarespace-cdn.com/content/v1/5168923ce4b02d0863352e09/1615918086678-J8Y3TUM8PKI8Z1JVN6KZ/McDonalds_Q121_THX.gif?format=500w',
-    urlDeploy: 'https://trybewallet-pied.vercel.app/',
-    urlGithub: 'https://github.com/julio-silveira/TrybeWallet'
+    projectName: 'Pixel Art',
+    description:
+      'Uma "tela" que permite a criação de pixel arts de 5x5 pixels até 50x50!',
+    image: pixelart,
+    urlDeploy: 'https://julio-silveira.github.io/pixel-art/',
+    urlGithub: 'https://github.com/julio-silveira/pixel-art',
+    stacks: ['Javascript', 'DOM', 'Bootstrap']
   }
 ]
 

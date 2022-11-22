@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem'
 import LogoDevIcon from '@mui/icons-material/LogoDev'
 import { SocialBar } from '../SocialBar'
 
-const pages = ['Projetos', 'Tecnologias']
+const pages = ['PROJETOS', 'TECNOLOGIAS']
 
 interface HeaderProps {
   techsRef: React.RefObject<HTMLElement>
@@ -34,7 +34,6 @@ const Header: React.FC<HeaderProps> = ({ techsRef, projectsRef }) => {
   const handleScroll = (event: React.MouseEvent<HTMLElement>): void => {
     const { innerText } = event.target as HTMLElement
     handleCloseNavMenu()
-    console.log(techsRef)
     setTimeout(() => {
       if (innerText === 'PROJETOS') {
         projectsRef.current?.scrollIntoView({
@@ -72,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ techsRef, projectsRef }) => {
               textDecoration: 'none'
             }}
           >
-            PORTIFÓLIO
+            PORTFÓLIO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -99,7 +98,6 @@ const Header: React.FC<HeaderProps> = ({ techsRef, projectsRef }) => {
                 vertical: 'top',
                 horizontal: 'left'
               }}
-              color="primary"
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
@@ -108,19 +106,20 @@ const Header: React.FC<HeaderProps> = ({ techsRef, projectsRef }) => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleScroll}>
-                  <Button
+                  <Typography
+                    variant="h6"
                     key={page}
-                    sx={{ my: 2, color: 'black', display: 'block' }}
+                    sx={{ my: 2, color: 'white', display: 'block' }}
                   >
                     {page}
-                  </Button>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <LogoDevIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
             href=""
@@ -129,13 +128,14 @@ const Header: React.FC<HeaderProps> = ({ techsRef, projectsRef }) => {
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
+              fontSize: '18px',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none'
             }}
           >
-            PORTIFÓLIO
+            PORTFÓLIO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

@@ -74,7 +74,7 @@ const Projects = forwardRef((_props, ref) => {
                   rel="noopener noreferrer"
                 >
                   <CardButton variant="contained" size="small">
-                    Acessar o Repositório
+                    Repositório
                   </CardButton>
                 </Typography>
 
@@ -85,7 +85,7 @@ const Projects = forwardRef((_props, ref) => {
                   rel="noopener noreferrer"
                 >
                   <CardButton variant="contained" size="small">
-                    Visualizar o site
+                    Aplicação
                   </CardButton>
                 </Typography>
               </Stack>

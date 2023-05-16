@@ -44,7 +44,7 @@ const Intro: React.FC<InfoProps> = ({ projectsRef }) => {
           </Typography>
           <Typography variant="h4">
             {
-              'Desenvolvedor Front End, estudante da Trybe e professor de Física'
+              'Desenvolvedor Full Stack, estudante da Trybe e professor de Física'
             }
           </Typography>
         </Box>

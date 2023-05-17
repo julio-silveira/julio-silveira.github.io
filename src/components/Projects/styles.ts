@@ -20,8 +20,4 @@ export const ProjectCard = styled(Box)`
 export const CardButton = styled(Button)`
   background: linear-gradient(to right, #945dd6, #6978d1, #13adc7);
   border-radius: 25px;
-  &:hover: {
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-  }
 `

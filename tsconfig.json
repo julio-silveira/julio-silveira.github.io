@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["app/client/src", "techslist.ts"],
+  "include": ["src", "techslist.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

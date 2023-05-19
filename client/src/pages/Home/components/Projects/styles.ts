@@ -1,5 +1,5 @@
 import { Box, Button, Paper, styled } from '@mui/material'
-import theme from '../../themes/theme'
+import theme from '../../../../themes/theme'
 
 export const ProjectsSection = styled(Box)`
   flex-grow: 1;

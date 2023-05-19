@@ -10,12 +10,13 @@
     "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "lint": "eslint 'src/**/*.{ts,tsx}' --max-warnings=0",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "coverage-test": "jest --coverage",
-    "coverage-test:watch": "jest --coverage -- watch"
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "test": "jest --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
+    "coverage-test": "jest --coverage --maxWorkers=50%",
+    "coverage-test:watch": "jest --coverage --watch --maxWorkers=25%"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -26,6 +27,7 @@
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

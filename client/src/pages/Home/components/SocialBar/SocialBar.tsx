@@ -1,7 +1,7 @@
 import * as React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import personalData from '../../data/personalData'
+import personalData from '../../../../data/personalData'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { Stack } from '@mui/material'
 

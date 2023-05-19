@@ -1,15 +1,15 @@
-interface techListFormat {
+interface TechListInterface {
   techName: string
-  completed: number
+  color: string
 }
-export const techBarList: techListFormat[] = [
+export const techBarList: TechListInterface[] = [
   {
     techName: 'React',
-    completed: 60
+    color: '%2320232a'
   },
   {
     techName: 'Javascript',
-    completed: 74
+    color: '%23323330'
   },
   {
     techName: 'HTML5',
@@ -36,8 +36,8 @@ export const techBarList: techListFormat[] = [
 export const techNamesList: string[] = [
   'Git',
   'GitHub',
-  'Styled-Components',
-  'Material-UI',
+  'StyledComponents',
+  'MUI',
   'Bootstrap',
   'TDD'
 ]

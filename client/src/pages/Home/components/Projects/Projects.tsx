@@ -1,14 +1,18 @@
-import React, { forwardRef } from 'react'
-import projectList from '../../data/projectList'
+import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2'
-import { Paper, Typography } from '@mui/material'
+import { Box, Paper, Typography } from '@mui/material'
 import { Stack } from '@mui/system'
 import { CardButton, ProjectCard, ProjectsSection } from './styles'
+import projectList from '../../../../data/projectList'
+import { usePageRef } from '../../../../hooks'
 
-const Projects = forwardRef((_props, ref) => {
+export default function Projects() {
+  const { projectsRef } = usePageRef()
+
   return (
-    <ProjectsSection ref={ref} component="section" mb="5vh">
+    <ProjectsSection ref={projectsRef} component="section" mb="5vh">
       <Typography variant="h3">Projetos</Typography>
+
       <Grid container spacing={4} sx={{ mt: '5vh' }}>
         {projectList.map((project, index) => (
           <Grid
@@ -27,7 +31,9 @@ const Projects = forwardRef((_props, ref) => {
                 maxWidth: { xs: '300px', md: '400px' }
               }}
             >
-              <img
+              <Box
+                component="img"
+                sx={{ maxWidth: '200px' }}
                 className="card-picture"
                 src={project.image}
                 alt={`image-card}`}
@@ -95,8 +101,4 @@ const Projects = forwardRef((_props, ref) => {
       </Grid>
     </ProjectsSection>
   )
-})
-
-Projects.displayName = 'Projects'
-
-export default Projects
+}

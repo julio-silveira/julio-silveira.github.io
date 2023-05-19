@@ -1,18 +1,10 @@
 import * as React from 'react'
 import { Box, Button, Container, Stack, Typography } from '@mui/material'
-import info from '../../assets/info.svg'
+import info from '../../../../assets/info.svg'
+import { usePageRef } from '../../../../hooks'
 
-interface InfoProps {
-  projectsRef: React.RefObject<HTMLElement>
-}
-const Intro: React.FC<InfoProps> = ({ projectsRef }) => {
-  const handleScroll = () => {
-    projectsRef.current?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest'
-    })
-  }
+export default function Intro() {
+  const { handleScrollToProjects } = usePageRef()
 
   return (
     <Container
@@ -28,17 +20,14 @@ const Intro: React.FC<InfoProps> = ({ projectsRef }) => {
       <Stack
         spacing={4}
         sx={{
-          width: '60%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-around',
+          flex: '2 1 60%',
           alignItems: 'flex-start'
         }}
       >
         <Box>
           <Typography
             variant="h3"
-            sx={{ fontFamily: 'monospace', fontWeight: 700 }}
+            sx={{ fontFamily: 'monospace', fontWeight: 'bold' }}
           >
             Oi, eu sou o Júlio
           </Typography>
@@ -50,21 +39,22 @@ const Intro: React.FC<InfoProps> = ({ projectsRef }) => {
         </Box>
         <Button
           variant="contained"
-          onClick={handleScroll}
+          onClick={handleScrollToProjects}
           sx={{
-            background: 'linear-gradient(to right,#945DD6,#6978D1,#13ADC7)',
-            borderRadius: '25px'
+            background: 'linear-gradient(to right,#945DD6,#13ADC7)',
+            borderRadius: 5
           }}
         >
           Saiba Mais
         </Button>
       </Stack>
 
-      <Box sx={{ width: '40%' }}>
-        <img style={{ maxWidth: '100%' }} src={info} alt="image" />
-      </Box>
+      <Box
+        component="img"
+        src={info}
+        alt="image"
+        sx={{ flex: '1 2 40%', maxWidth: '40%' }}
+      />
     </Container>
   )
 }
-
-export default Intro

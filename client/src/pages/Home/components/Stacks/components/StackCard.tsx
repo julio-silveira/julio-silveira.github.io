@@ -1,6 +1,5 @@
 import React from 'react'
-import { Paper, Stack, Box, Typography } from '@mui/material'
-import { Key } from '@mui/icons-material'
+import { Paper, Stack, Box, Typography, Grow } from '@mui/material'
 
 type Props = {
   techKey: string
@@ -8,12 +7,11 @@ type Props = {
   name?: string
 }
 
-export default function StackCard({ techKey, name, key }: Props) {
+export default function StackCard({ techKey, name }: Props) {
   return (
     <Paper
       component={Stack}
       spacing={1}
-      key={key}
       sx={{
         p: 2,
         mx: 1,
@@ -26,14 +24,18 @@ export default function StackCard({ techKey, name, key }: Props) {
         }
       }}
     >
-      <Box
-        sx={{ width: '75px' }}
-        component="img"
-        src={`https://cdn.simpleicons.org/${techKey}/FFA500`}
-      />
-      <Typography variant="h6">
-        {name ? name.toUpperCase() : techKey.toUpperCase()}
-      </Typography>
+      <Grow in timeout={1100}>
+        <Box
+          sx={{ width: '75px' }}
+          component="img"
+          src={`https://cdn.simpleicons.org/${techKey}/FFA500`}
+        />
+      </Grow>
+      <Grow in timeout={1100}>
+        <Typography variant="h6">
+          {name ? name.toUpperCase() : techKey.toUpperCase()}
+        </Typography>
+      </Grow>
     </Paper>
   )
 }

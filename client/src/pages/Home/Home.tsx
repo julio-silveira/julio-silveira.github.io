@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from '@mui/material'
+import { Container, Fade } from '@mui/material'
 import { Footer, Header, Intro, Projects, Stacks } from './components'
 import { ScrollToTopFab } from '@/components'
 

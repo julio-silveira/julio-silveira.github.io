@@ -19,7 +19,6 @@ export default function MobileMenu() {
       >
         <MenuIcon />
       </IconButton>
-
       <Menu
         id="menu-appbar"
         anchorEl={anchorElNav}
@@ -41,7 +40,7 @@ export default function MobileMenu() {
         {pages.map(({ name, scrollFn }) => (
           <MenuItem key={name} onClick={scrollFn}>
             <Typography
-              variant="h6"
+              variant="body2"
               sx={{ my: 2, color: 'white', display: 'block' }}
             >
               {name}

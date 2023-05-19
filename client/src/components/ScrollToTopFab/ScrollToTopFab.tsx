@@ -16,7 +16,7 @@ function ScrollToTopFab() {
         role="presentation"
         sx={{
           position: 'fixed',
-          bottom: 32,
+          bottom: 60,
           right: 32,
           zIndex: 1
         }}

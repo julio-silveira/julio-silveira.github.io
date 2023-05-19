@@ -1,7 +1,8 @@
 import React from 'react'
-import { Stack, Typography } from '@mui/material'
+import { Box, Grow, Stack, Typography } from '@mui/material'
 import { usePageRef } from '@/hooks'
 import { techBarList } from '@/data/techslist'
+import fill from '@/assets/fill.svg'
 import StackCard from './components/StackCard'
 import CustomMarquee from './components/CustomMarkee'
 
@@ -15,15 +16,30 @@ export default function Stacks() {
       component="section"
       sx={{ minHeight: '100vh' }}
     >
-      <Typography mb={5} variant="h3">
-        Tecnologias
-      </Typography>
+      <Grow in timeout={1000}>
+        <Typography variant="h3">Tecnologias</Typography>
+      </Grow>
+
+      <Box
+        alignSelf="flex-end"
+        component="img"
+        src={fill}
+        sx={{ width: '150px', opacity: 0.2 }}
+        pt={1}
+      />
 
       <CustomMarquee>
-        {techBarList.map(({ techKey, name }, i) => (
-          <StackCard key={`${techKey}-${i}`} techKey={techKey} name={name} />
+        {techBarList.map(({ techKey, name }) => (
+          <StackCard key={techKey} techKey={techKey} name={name} />
         ))}
       </CustomMarquee>
+      <Box
+        pt={1}
+        alignSelf="start"
+        component="img"
+        src={fill}
+        sx={{ width: '150px', opacity: 0.1, transform: 'rotate(180deg)' }}
+      />
     </Stack>
   )
 }

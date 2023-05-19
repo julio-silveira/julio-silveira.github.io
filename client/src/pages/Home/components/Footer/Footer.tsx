@@ -1,12 +1,10 @@
-import { Button, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import * as React from 'react'
 import { SocialBar } from '../SocialBar'
-import personalData from '../../../../data/personalData'
-import { usePageRef } from '../../../../hooks'
+import personalData from '@/data/personalData'
 
 export default function Footer() {
-  const { handlescrollToHeader } = usePageRef()
   return (
     <Box
       component="footer"
@@ -17,15 +15,6 @@ export default function Footer() {
         pb: '10px'
       }}
     >
-      <Button onClick={handlescrollToHeader}>top</Button>
-      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-        <Typography sx={{ fontSize: { xs: '14px', md: '20px' } }} variant="h6">
-          Me liga
-        </Typography>
-        <Typography sx={{ fontSize: { xs: '14px', md: '20px' } }} variant="h6">
-          {personalData.phone}
-        </Typography>
-      </Box>
       <Box>
         <Typography sx={{ fontSize: { xs: '14px', md: '20px' } }} variant="h6">
           Email

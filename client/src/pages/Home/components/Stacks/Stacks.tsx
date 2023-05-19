@@ -1,38 +1,29 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
-import { techBarList, techNamesList } from '../../../../data/techslist'
-import { usePageRef } from '../../../../hooks'
+import { Stack, Typography } from '@mui/material'
+import { usePageRef } from '@/hooks'
+import { techBarList } from '@/data/techslist'
+import StackCard from './components/StackCard'
+import CustomMarquee from './components/CustomMarkee'
 
 export default function Stacks() {
   const { stacksRef } = usePageRef()
+
   return (
-    <Box sx={{ width: '100%', minHeight: '90vh' }} ref={stacksRef}>
-      <Typography variant="h3">Tecnologias</Typography>
-      {techBarList.map(({ techName, color }, index) => (
-        <article key={`techName-${index}`}>
-          <Box
-            component="img"
-            src={`https://img.shields.io/badge/${techName}-${color}.svg?style=for-the-badge&logo=${techName}`}
-          />
-        </article>
-      ))}
-      <Typography variant="h4">Outras tecnologias e habilidades</Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-evenly',
-          flexDirection: { xs: 'column', md: 'row' }
-        }}
-      >
-        {techNamesList.map((tech, index) => (
-          <Box
-            key={`tech-${index}`}
-            component="img"
-            src={`https://img.shields.io/badge/${tech}-black.svg?style=for-the-badge&logo=${tech}&logoColor=white`}
-          />
+    <Stack
+      ref={stacksRef}
+      pt={10}
+      component="section"
+      sx={{ minHeight: '100vh' }}
+    >
+      <Typography mb={5} variant="h3">
+        Tecnologias
+      </Typography>
+
+      <CustomMarquee>
+        {techBarList.map(({ techKey, name }, i) => (
+          <StackCard key={`${techKey}-${i}`} techKey={techKey} name={name} />
         ))}
-      </Box>
-    </Box>
+      </CustomMarquee>
+    </Stack>
   )
 }

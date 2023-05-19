@@ -1,43 +1,33 @@
 interface TechListInterface {
-  techName: string
-  color: string
+  techKey: string
+  name?: string
 }
 export const techBarList: TechListInterface[] = [
   {
-    techName: 'React',
-    color: '%2320232a'
+    techKey: 'React'
   },
   {
-    techName: 'Javascript',
-    color: '%23323330'
+    techKey: 'Javascript'
   },
   {
-    techName: 'HTML5',
-    completed: 73
+    techKey: 'HTML5'
   },
   {
-    techName: 'CSS3',
-    completed: 70
+    techKey: 'CSS3'
   },
   {
-    techName: 'JEST',
-    completed: 60
+    techKey: 'JEST'
   },
   {
-    techName: 'SQL',
-    completed: 30
+    techKey: 'MySQL'
   },
   {
-    techName: 'TypeScript',
-    completed: 10
-  }
-]
-
-export const techNamesList: string[] = [
-  'Git',
-  'GitHub',
-  'StyledComponents',
-  'MUI',
-  'Bootstrap',
-  'TDD'
+    techKey: 'TypeScript'
+  },
+  {
+    techKey: 'Git'
+  },
+  { techKey: 'GitHub' },
+  { techKey: 'MUI' },
+  { techKey: 'Bootstrap' }
 ]

@@ -1,4 +1,4 @@
-import { Stack, Typography, Chip, Grow, Zoom } from '@mui/material'
+import { Stack, Typography, Chip } from '@mui/material'
 import React from 'react'
 import { TransitionGroup } from 'react-transition-group'
 
@@ -15,15 +15,11 @@ type Props = {
 export default function ProjectDetails({ project }: Props) {
   return (
     <Stack spacing={1} flexGrow={1}>
-      <Grow in={true} timeout={1000}>
-        <Typography color="primary" variant="h6">
-          {project.projectName}
-        </Typography>
-      </Grow>
+      <Typography color="primary" variant="h6">
+        {project.projectName}
+      </Typography>
 
-      <Grow in={true} timeout={1000}>
-        <Typography variant="body2">{project.description}</Typography>
-      </Grow>
+      <Typography variant="body2">{project.description}</Typography>
 
       <Stack
         component={TransitionGroup}
@@ -36,9 +32,12 @@ export default function ProjectDetails({ project }: Props) {
         }}
       >
         {project.stacks.map((stack) => (
-          <Zoom key={`${project.projectName} ${stack}`} enter timeout={1200}>
-            <Chip variant="outlined" color="primary" label={stack} />
-          </Zoom>
+          <Chip
+            key={`${project.projectName} ${stack}`}
+            variant="outlined"
+            color="primary"
+            label={stack}
+          />
         ))}
       </Stack>
     </Stack>

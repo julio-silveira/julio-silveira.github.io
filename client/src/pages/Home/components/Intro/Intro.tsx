@@ -1,7 +1,8 @@
 import React from 'react'
-import { Box, Button, Fade, Stack, Typography } from '@mui/material'
+import { Box, Button, Stack, Typography } from '@mui/material'
 import { usePageRef } from '@/hooks'
 import info from '@/assets/info.svg'
+import { AttentionSeeker, Fade } from 'react-awesome-reveal'
 
 export default function Intro() {
   const { handleScrollToProjects } = usePageRef()
@@ -13,32 +14,36 @@ export default function Intro() {
       alignItems="center"
       sx={{ minHeight: '100vh' }}
     >
-      <Fade appear in timeout={1000}>
+      <Fade>
         <Stack spacing={4} alignItems="flex-start">
           <Box>
-            <Typography
-              variant="h3"
-              sx={{ fontFamily: 'monospace', fontWeight: 'bold' }}
-            >
-              Oi, eu sou o Júlio
-            </Typography>
-            <Typography variant="h4">
-              Desenvolvedor Fullstack e professor de física.
-            </Typography>
+            <AttentionSeeker triggerOnce>
+              <Typography
+                variant="h3"
+                sx={{ fontFamily: 'monospace', fontWeight: 'bold' }}
+              >
+                Oi, eu sou o Júlio
+              </Typography>
+              <Typography variant="h4">
+                Desenvolvedor Fullstack e professor de física.
+              </Typography>
+            </AttentionSeeker>
           </Box>
-          <Button
-            variant="contained"
-            onClick={handleScrollToProjects}
-            sx={{ borderRadius: 5 }}
-          >
-            Saiba Mais
-          </Button>
+
+          <AttentionSeeker effect="pulse" delay={1000} duration={1000}>
+            <Button
+              size="large"
+              variant="contained"
+              onClick={handleScrollToProjects}
+              sx={{ borderRadius: 5 }}
+            >
+              Saiba Mais
+            </Button>
+          </AttentionSeeker>
         </Stack>
       </Fade>
 
-      <Fade appear in timeout={1000}>
-        <Box component="img" src={info} alt="image" sx={{ maxWidth: '40%' }} />
-      </Fade>
+      <Box component="img" src={info} alt="image" sx={{ maxWidth: '40%' }} />
     </Stack>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import projectList from '@/data/projectList'
 import { usePageRef } from '@/hooks'
-import { Typography, Stack, Paper, Grow } from '@mui/material'
+import { Typography, Stack, Paper } from '@mui/material'
 
 import ProjectDetails from './components/ProjectDetails'
 import ProjectLinks from './components/ProjectLinks'
-import { TransitionGroup } from 'react-transition-group'
+import { Fade } from 'react-awesome-reveal'
 
 export default function Projects() {
   const { projectsRef } = usePageRef()
@@ -17,25 +17,24 @@ export default function Projects() {
       component="section"
       sx={{ minHeight: '100vh' }}
     >
-      <Grow in timeout={1000}>
+      <Fade duration={500} triggerOnce>
         <Typography variant="h3">Projetos</Typography>
-      </Grow>
-      <Stack component={TransitionGroup} spacing={2} sx={{ mt: 5 }}>
+      </Fade>
+      <Stack component={Fade} duration={750} cascade sx={{ mt: 1 }}>
         {projectList.map((project) => (
-          <Grow in timeout={500} key={project.projectName}>
-            <Paper
-              p={2}
-              component={Stack}
-              direction="row"
-              justifyContent="space-between"
-            >
-              <ProjectDetails project={project} />
-              <ProjectLinks
-                urlDeploy={project.urlDeploy}
-                urlGithub={project.urlGithub}
-              />
-            </Paper>
-          </Grow>
+          <Paper
+            key={project.projectName}
+            p={2}
+            component={Stack}
+            direction="row"
+            justifyContent="space-between"
+          >
+            <ProjectDetails project={project} />
+            <ProjectLinks
+              urlDeploy={project.urlDeploy}
+              urlGithub={project.urlGithub}
+            />
+          </Paper>
         ))}
       </Stack>
     </Stack>

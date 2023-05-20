@@ -5,6 +5,7 @@ import { techBarList } from '@/data/techslist'
 import fill from '@/assets/fill.svg'
 import StackCard from './components/StackCard'
 import CustomMarquee from './components/CustomMarkee'
+import { Fade } from 'react-awesome-reveal'
 
 export default function Stacks() {
   const { stacksRef } = usePageRef()
@@ -16,9 +17,9 @@ export default function Stacks() {
       component="section"
       sx={{ minHeight: '100vh' }}
     >
-      <Grow in timeout={1000}>
+      <Fade triggerOnce>
         <Typography variant="h3">Tecnologias</Typography>
-      </Grow>
+      </Fade>
 
       <Box
         alignSelf="flex-end"

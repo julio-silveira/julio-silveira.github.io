@@ -2,9 +2,11 @@ import { useState } from 'react'
 import { usePageRef } from '../../../../hooks'
 
 export default function useHeader() {
-  const { handleScrollToProjects, handleScrollToStacks } = usePageRef()
+  const { handleScrollToProjects, handleScrollToStacks, handleScrollToAbout } =
+    usePageRef()
 
   const pages = [
+    { name: 'SOBRE', scrollFn: handleScrollToAbout },
     { name: 'PROJETOS', scrollFn: handleScrollToProjects },
     { name: 'TECNOLOGIAS', scrollFn: handleScrollToStacks }
   ]

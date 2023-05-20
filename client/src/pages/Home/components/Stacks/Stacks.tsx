@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grow, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import { usePageRef } from '@/hooks'
 import { techBarList } from '@/data/techslist'
 import fill from '@/assets/fill.svg'

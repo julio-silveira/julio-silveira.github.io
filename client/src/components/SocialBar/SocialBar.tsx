@@ -8,7 +8,7 @@ import IconButtonLink from './components/IconButtonLink'
 
 export default function SocialBar() {
   return (
-    <Stack component="nav" spacing={{ xs: 1, sm: 2 }} direction="row">
+    <Stack component="nav" spacing={{ xs: 0, sm: 2 }} direction="row">
       <IconButtonLink to={personalData.github} icon={<GitHubIcon />} />
       <IconButtonLink to={personalData.linkedin} icon={<LinkedInIcon />} />
       <IconButtonLink to={personalData.whatsapp} icon={<WhatsAppIcon />} />

@@ -5,7 +5,7 @@ import info from '@/assets/info.svg'
 import { AttentionSeeker, Fade } from 'react-awesome-reveal'
 
 export default function Intro() {
-  const { handleScrollToProjects } = usePageRef()
+  const { handleScrollToAbout } = usePageRef()
 
   return (
     <Stack
@@ -25,7 +25,7 @@ export default function Intro() {
                 Oi, eu sou o Júlio
               </Typography>
               <Typography variant="h4">
-                Desenvolvedor Fullstack e professor de física.
+                Desenvolvedor web Fullstack e professor de física.
               </Typography>
             </AttentionSeeker>
           </Box>
@@ -34,7 +34,7 @@ export default function Intro() {
             <Button
               size="large"
               variant="contained"
-              onClick={handleScrollToProjects}
+              onClick={handleScrollToAbout}
               sx={{ borderRadius: 5 }}
             >
               Saiba Mais
@@ -43,7 +43,7 @@ export default function Intro() {
         </Stack>
       </Fade>
 
-      <Box component="img" src={info} alt="image" sx={{ maxWidth: '40%' }} />
+      <Box component="img" src={info} alt="image" sx={{ maxWidth: '35%' }} />
     </Stack>
   )
 }

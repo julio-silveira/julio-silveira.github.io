@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Paper, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import * as React from 'react'
 import { SocialBar } from '../../../../components/SocialBar'
@@ -6,21 +6,24 @@ import personalData from '@/data/personalData'
 
 export default function Footer() {
   return (
-    <Box
+    <Paper
       component="footer"
       sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-around',
-        pb: '10px'
+        mt: 2,
+        py: 1
       }}
     >
       <Box>
-        <Typography variant="body1">Email</Typography>
-        <Typography variant="body1">{personalData.email}</Typography>
+        <Typography
+          pl={2}
+          variant="body1"
+        >{`Email: ${personalData.email}`}</Typography>
       </Box>
 
       <SocialBar />
-    </Box>
+    </Paper>
   )
 }

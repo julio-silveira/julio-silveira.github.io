@@ -20,7 +20,7 @@ export default function Projects() {
       <Fade duration={500} triggerOnce>
         <Typography variant="h3">Projetos</Typography>
       </Fade>
-      <Stack component={Fade} duration={750} cascade sx={{ mt: 1 }}>
+      <Stack component={Fade} triggerOnce duration={1000} sx={{ mt: 1 }}>
         {projectList.map((project) => (
           <Paper
             key={project.projectName}

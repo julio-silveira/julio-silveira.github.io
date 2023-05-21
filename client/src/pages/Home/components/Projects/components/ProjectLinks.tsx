@@ -1,11 +1,11 @@
 import { Stack } from '@mui/material'
 import React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import WebIcon from '@mui/icons-material/Web'
+import PreviewIcon from '@mui/icons-material/Preview'
 import { FabLink } from '@/components'
 
 type Props = {
-  urlDeploy: string
+  urlDeploy?: string
   urlGithub: string
 }
 
@@ -13,7 +13,9 @@ export default function ProjectLinks({ urlDeploy, urlGithub }: Props) {
   return (
     <Stack justifyContent="center" spacing={1}>
       <FabLink to={urlGithub} tooltip="Repositório" icon={<GitHubIcon />} />
-      <FabLink to={urlDeploy} tooltip="Preview" icon={<WebIcon />} />
+      {urlDeploy ? (
+        <FabLink to={urlDeploy} tooltip="Preview" icon={<PreviewIcon />} />
+      ) : null}
     </Stack>
   )
 }

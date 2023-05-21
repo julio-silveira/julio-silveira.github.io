@@ -2,7 +2,7 @@
 
 Olá, esse é o meu portfólio, feito para resumir um pouco do meu trabalho e indexar meus projetos.
 
-Você pode acessar-lo <a href="https://julio-silveira.github.io" >clicando aqui. </a>
+Você pode acessar-lo <a href="https://julio-silveira.github.io" target:_blank>clicando aqui. </a>
 
 ## Tecnologias utilizadas 
 

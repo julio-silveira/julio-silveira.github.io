@@ -8,8 +8,7 @@ export default function usePageRef() {
     projectsRef,
     handleScrollToAbout,
     handleScrollToProjects,
-    handleScrollToStacks,
-    handlescrollToHeader
+    handleScrollToStacks
   } = useContext(RefContext)
   return {
     projectsRef,
@@ -17,7 +16,6 @@ export default function usePageRef() {
     stacksRef,
     handleScrollToAbout,
     handleScrollToProjects,
-    handleScrollToStacks,
-    handlescrollToHeader
+    handleScrollToStacks
   }
 }
